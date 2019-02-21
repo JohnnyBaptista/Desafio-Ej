@@ -1,6 +1,18 @@
 i.pass{
+	position: relative;
+	top: 20%;
+	left: 33%;
 	color: green;
-	font-size: 15pt;
+	font-size: 20pt;
+	text-align: center;
+	margin: 0px auto; 
+}
+
+.texticulo{
+	text-align: center;
+	position: relative;
+	top: 20%;
+	left: 18%;
 }
 
 i.pass:hover{

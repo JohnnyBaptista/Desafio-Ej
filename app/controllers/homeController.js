@@ -10,7 +10,6 @@ module.exports.mudaStatus = function(application, req, res, id){
 	var connection = application.config.dbConnection();
 	var model = new application.app.models.TarefaModel(connection);
 	model.updateStatus(id, function(error, result){
-		console.log(result);
 		application.app.controllers.homeController.index(application, req, res);
 	});
 }

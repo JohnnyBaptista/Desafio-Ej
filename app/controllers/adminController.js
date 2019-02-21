@@ -14,5 +14,4 @@ module.exports.salvar_tarefa = function(application, req, res){
 		res.redirect("/");
 	});
 
-	console.log(result);
 }
