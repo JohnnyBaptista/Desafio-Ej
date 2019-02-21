@@ -41,8 +41,8 @@
 		      <td><%=tarefas[i].descricao%></td>
 		      <td><%=tarefas[i].data_inicio%></td>
 		      <td>
-		      	<%if(tarefas[i].status != 3){%>
-					<i class="fas fa-arrow-alt-circle-right"></i>
+		      	<%if(tarefas[i].status != 2){%>
+					<a href="/tarefas/status/<%=tarefas[i].id%>"><i class="fas fa-arrow-alt-circle-right pass"></i></a>
 		      	<%}else{%>
 		      		<%=tarefas[i].data_fim%>
 		      	<%}%>

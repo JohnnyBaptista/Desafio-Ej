@@ -7,7 +7,7 @@ module.exports.salvar_tarefa = function(application, req, res){
 	var model = new application.app.models.TarefaModel(connection);
 
 	var tarefa = req.body;
-	var status = {"status" : "0"}
+	var status = {"status" : "0"};
 	var result = Object.assign({}, tarefa, status);
 
 	model.salvarTarefa(result, function(error, result){

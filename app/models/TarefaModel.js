@@ -10,6 +10,10 @@ TarefaModel.prototype.salvarTarefa = function(tarefa, callback) {
 	this._connection.query("insert into tarefa set ?", tarefa, callback);
 };
 
+TarefaModel.prototype.updateStatus = function(id, callback) {
+	this._connection.query('update tarefa set status = status + 1 where id = '+id, callback);
+};
+
 module.exports = function() {
 	return TarefaModel;
 }
