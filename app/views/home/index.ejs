@@ -28,33 +28,33 @@
 			    </tr>
 			  </thead>
 			  <tbody>
-			  	<%for(var i = 0; i < tarefas.length; i++){%>
+					<%tarefas.forEach((tarefa) =>{%>
 				    <tr>
-				      <th scope="row"><%=tarefas[i].id%></th>
+				      <th scope="row"><%=tarefa.id%></th>
 				      <td>
-				      	<%if(tarefas[i].status == 0){%>
+				      	<%if(tarefa.status == 0){%>
 				      		Disponível
-				      	<%}else if(tarefas[i].status == 1){%>
+				      	<%}else if(tarefa.status == 1){%>
 				      		Em andamento
 				      	<%}else{%>
 				      		Finalizado
 				      	<%}%>
 				      </td>
-				      <td><%=tarefas[i].produto%></td>
-				      <td><%=tarefas[i].descricao%></td>
-				      <td><%=tarefas[i].data_inicio%></td>
+				      <td><%=tarefa.produto%></td>
+				      <td><%=tarefa.descricao%></td>
+				      <td><%=new Date(tarefa.data_inicio).toLocaleString('pt-br');%></td>
 				      <td>
-				      	<%if(tarefas[i].status != 2){%>
+				      	<%if(tarefa.status != 2){%>
 							<span class="texticulo">Avançar estágio</span>
 				      		<br>
-							<a href="/tarefas/<%=tarefas[i].status%>/<%=tarefas[i].id%>"><i class="fas fa-arrow-alt-circle-right pass"></i></a>
+							<a href="/tarefas/<%=tarefa.status%>/<%=tarefa.id%>"><i class="fas fa-arrow-alt-circle-right pass"></i></a>
 				      	<%}else{%>
-				      		<%=tarefas[i].data_fim%>
+				      		<%=new Date(tarefa.data_fim).toLocaleString('pt-br');%>
 				      	<%}%>
 				      		
 				      </td>
 				    </tr>
-			    <%}%>
+			    <%});%>
 			  </tbody>
 			</table>
 	 	</div>	

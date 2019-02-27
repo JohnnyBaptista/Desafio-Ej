@@ -14,8 +14,9 @@ TarefaModel.prototype.updateStatus = function(id, callback) {
 	this._connection.query('update tarefa set status = status + 1 where id = '+id, callback);
 };
 
-TarefaModel.prototype.updateData = function(id, data, callback) {
-	const sql = "UPDATE tarefa set data_fim = cast('"+data+"' AS DATE) WHERE id = "+id;
+TarefaModel.prototype.updateData = function(id, callback) {
+	// UPDATE `table` SET date_date=now();
+	const sql = "UPDATE tarefa set data_fim = now() WHERE id = "+id;
 	this._connection.query(sql, callback);
 };
 
