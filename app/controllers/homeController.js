@@ -13,3 +13,12 @@ module.exports.mudaStatus = function(application, req, res, id){
 		application.app.controllers.homeController.index(application, req, res);
 	});
 }
+
+module.exports.mudaData = function(application, req, res, id, data) {
+	const connection = application.config.dbConnection();
+	const model = new application.app.models.TarefaModel(connection);
+	model.updateData(id, data, function(error, result){
+		if(error) console.log(error);
+		application.app.controllers.homeController.mudaStatus(application, req, res, id);
+	});
+}

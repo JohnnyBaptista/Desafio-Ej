@@ -47,7 +47,7 @@
 				      	<%if(tarefas[i].status != 2){%>
 							<span class="texticulo">Avançar estágio</span>
 				      		<br>
-							<a href="/tarefas/status/<%=tarefas[i].id%>"><i class="fas fa-arrow-alt-circle-right pass"></i></a>
+							<a href="/tarefas/<%=tarefas[i].status%>/<%=tarefas[i].id%>"><i class="fas fa-arrow-alt-circle-right pass"></i></a>
 				      	<%}else{%>
 				      		<%=tarefas[i].data_fim%>
 				      	<%}%>
